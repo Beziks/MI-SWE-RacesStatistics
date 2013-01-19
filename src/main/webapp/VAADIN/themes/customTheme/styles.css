@@ -1,0 +1,44 @@
+@import url(../runo/styles.css);
+
+.multipleupload .v-multifileupload-dropzone{
+    background-color: #dedede;
+    margin-bottom: 5px;
+}
+
+.imageInList{
+    float: left;
+    padding: 5px;
+    background-color: #eee;
+    text-align: center;
+    font-weight: bold;
+    color: darkgray;
+    margin: 5px;
+}
+
+.red{
+    background-color: red;
+    border: 2px solid lightcoral;
+}
+
+.blue{
+    background-color: blue;
+    border: 2px solid lightblue;
+}
+
+.dropTarget{
+    background-color: paleturquoise;
+    margin: 10px auto;
+}
+
+.searchLabel{
+    padding-left: 1em;
+}
+
+.imageButton{
+    margin-top: 10px;
+}
+
+.margin-top{
+    margin-top: 1em;
+}
+
