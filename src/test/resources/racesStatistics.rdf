@@ -1,0 +1,408 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl> .
+
+<http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Datatypes
+#
+#################################################################
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#competite
+
+:competite rdf:type owl:AsymmetricProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:range :Race ;
+           
+           rdfs:domain :Runner .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#contains
+
+:contains rdf:type owl:AsymmetricProperty ,
+                   owl:ObjectProperty ;
+          
+          rdfs:range :Race ;
+          
+          rdfs:domain :RaceSeries ;
+          
+          owl:inverseOf :contains .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#containsRunner
+
+:containsRunner rdf:type owl:AsymmetricProperty ,
+                         owl:ObjectProperty ;
+                
+                rdfs:domain :Category ;
+                
+                rdfs:range :Runner ;
+                
+                owl:inverseOf :isInCategory .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#date
+
+:date rdf:type owl:AsymmetricProperty ,
+               owl:ObjectProperty ;
+      
+      rdfs:range :Date ;
+      
+      rdfs:domain :Race .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#hasCategory
+
+:hasCategory rdf:type owl:AsymmetricProperty ,
+                      owl:ObjectProperty ;
+             
+             rdfs:range :Category ;
+             
+             rdfs:domain :Race .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#hasGender
+
+:hasGender rdf:type owl:AsymmetricProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:range :Gender ;
+           
+           rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#hasMember
+
+:hasMember rdf:type owl:AsymmetricProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:domain :Race ;
+           
+           rdfs:range :Runner ;
+           
+           owl:inverseOf :competite .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#isFrom
+
+:isFrom rdf:type owl:AsymmetricProperty ,
+                 owl:ObjectProperty ;
+        
+        rdfs:domain :Runner .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#isInCategory
+
+:isInCategory rdf:type owl:AsymmetricProperty ,
+                       owl:ObjectProperty ;
+              
+              rdfs:range :Category ;
+              
+              rdfs:domain :Runner .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#isInSeries
+
+:isInSeries rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ,
+                     owl:ObjectProperty ;
+            
+            rdfs:domain :Race ;
+            
+            rdfs:range :RaceSeries .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#isPerson
+
+:isPerson rdf:type owl:AsymmetricProperty ,
+                   owl:ObjectProperty ;
+          
+          rdfs:range :Person ;
+          
+          rdfs:domain :Runner .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#isRunning
+
+:isRunning rdf:type owl:AsymmetricProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:domain :Person ;
+           
+           rdfs:range :Runner ;
+           
+           owl:inverseOf :isPerson .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#runFor
+
+:runFor rdf:type owl:AsymmetricProperty ,
+                 owl:ObjectProperty ;
+        
+        rdfs:range :Club ;
+        
+        rdfs:domain :Runner .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#ageFrom
+
+:ageFrom rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         
+         rdfs:domain :Category ;
+         
+         rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#ageTo
+
+:ageTo rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       
+       rdfs:domain :Category ;
+       
+       rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#birthdate
+
+:birthdate rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           
+           rdfs:domain :Person ;
+           
+           rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#day
+
+:day rdf:type owl:DatatypeProperty ,
+              owl:FunctionalProperty ;
+     
+     rdfs:domain :Date ;
+     
+     rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#firstname
+
+:firstname rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           
+           rdfs:domain :Person ;
+           
+           rdfs:range xsd:string ;
+           
+           rdfs:subPropertyOf owl:topDataProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#month
+
+:month rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       
+       rdfs:domain :Date ;
+       
+       rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#name
+
+:name rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      
+      rdfs:domain :Category ,
+                  :Club ,
+                  :RaceSeries ;
+      
+      rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#startNumber
+
+:startNumber rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             
+             rdfs:domain :Runner ;
+             
+             rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#surname
+
+:surname rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         
+         rdfs:domain :Person ;
+         
+         rdfs:range xsd:string ;
+         
+         rdfs:subPropertyOf owl:topDataProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#time
+
+:time rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      
+      rdfs:domain :Runner ;
+      
+      rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#volume
+
+:volume rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        
+        rdfs:domain :Race ;
+        
+        rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#year
+
+:year rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      
+      rdfs:domain :Date ;
+      
+      rdfs:range xsd:integer .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#Address
+
+:Address rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#Category
+
+:Category rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#Club
+
+:Club rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#Date
+
+:Date rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#FemaleGender
+
+:FemaleGender rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Gender .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#Gender
+
+:Gender rdf:type owl:Class ;
+        
+        rdfs:subClassOf owl:Thing .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#MaleGender
+
+:MaleGender rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Gender .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#Person
+
+:Person rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#Race
+
+:Race rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#RaceSeries
+
+:RaceSeries rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/2012/cokrtvac/racesStatistics.owl#Runner
+
+:Runner rdf:type owl:Class .
+
+
+
+
+###  Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net
+
