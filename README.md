@@ -40,18 +40,18 @@ Use JBOSS 7.1.1.
 
 Datasource needed to connect to db - see WEB-INF/RacesStatistics-ds.xml
 
+<code>
+    <connection-url>jdbc:mysql://localhost:3306/races_statistics</connection-url>
 
-<connection-url>jdbc:mysql://localhost:3306/races_statistics</connection-url>
+    <driver>mysql-connector-java-5.1.22.jar</driver>
 
-<driver>mysql-connector-java-5.1.22.jar</driver>
+    <security>
 
-<security>
+        <user-name>root</user-name>
 
-	<user-name>root</user-name>
+        <password>123456</password>
 
-	<password>123456</password>
-
-</security>
-
+    </security>
+</code>
 
 Final RDF can be about 3 MB -> configure DB accordingly.
